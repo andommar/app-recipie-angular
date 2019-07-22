@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Recipie } from '../recipie.model';
 
 @Component({
@@ -15,7 +15,13 @@ export class RecipieListComponent implements OnInit {
     'http://recetasdecocina.elmundo.es/wp-content/uploads/2016/10/receta-pollo-al-chilindron.jpg')
   ];
 
+  @Output() recipieWasSelected = new EventEmitter <Recipie>();
+
   constructor() { }
+
+  onRecipieSelected(recipie: Recipie) {
+    this.recipieWasSelected.emit(recipie);
+  }
 
   ngOnInit() {
   }

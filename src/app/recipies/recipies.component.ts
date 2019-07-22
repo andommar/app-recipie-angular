@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Recipie } from './recipie.model';
 
 
 @Component({
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipies.component.css']
 })
 export class RecipiesComponent implements OnInit {
+
+  selectedRecipie: Recipie;
 
   constructor() { }
 
